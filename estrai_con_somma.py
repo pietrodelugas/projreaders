@@ -139,7 +139,8 @@ def read_data(**kwargs):
     labels = kwargs['labels']
     proj_dir = kwargs['proj_dir']
     filprojroot = kwargs['filprojroot']
-    filename = f"{proj_dir}/{filprojroot}.pdos_atm#{iat}(Cu)_wfc#{iwfc}({labels[iwfc]})"
+    symbol = kwargs['symbol']
+    filename = f"{proj_dir}/{filprojroot}.pdos_atm#{iat}({symbol})_wfc#{iwfc}({labels[iwfc]})"
     Emin, Emax = get_emax(filename)
     with open(filename,'r') as fr: 
         next(fr) 
